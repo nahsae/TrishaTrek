@@ -1,3 +1,4 @@
+// Import Router from Wouter and alias it to avoid shadowing our own Router component.
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -12,7 +13,7 @@ import Leaderboard from "@/pages/leaderboard";
 import Admin from "@/pages/admin";
 import NotFound from "@/pages/not-found";
 
-// Extract the application's route definitions into its own component. We avoid
+// Extract the application's route definitions into their own component. We avoid
 // shadowing the `Router` import from Wouter so that we can use the router
 // provided by Wouter with a base path.
 function AppRoutes() {
@@ -31,9 +32,10 @@ function AppRoutes() {
 
 function App() {
   return (
-    // Configure Wouter to use the repository name as a base path. Without this,
-    // routes won't match correctly when the app is hosted under a subpath like
-    // `/TrishaTrek` on GitHub Pages. See: https://github.com/molefrog/wouter#basename
+    // Configure Wouter to use the repository name as a base path. Without
+    // this, routes won't match correctly when the app is hosted under a
+    // subpath like `/TrishaTrek` on GitHub Pages. See:
+    // https://github.com/molefrog/wouter#basename
     <WouterRouter base="/TrishaTrek">
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest, queryClient } from "@/lib/queryClient";
+import defaultQuestions from "@/data/defaultQuestions";
 import type { Question, InsertGameSession } from "@shared/schema";
 
 interface GameState {
@@ -52,8 +53,24 @@ export default function Trivia() {
   const [playerName, setPlayerName] = useState("");
   const [gameStarted, setGameStarted] = useState(false);
 
+  // Fetch questions from the API when available. If the API call fails (for example
+  // on the static GitHub Pages deployment where no backend exists), fall back to
+  // a locally bundled set of trivia questions. This ensures the trivia game
+  // still works without needing a server.
   const { data: questions = [], isLoading } = useQuery<Question[]>({
     queryKey: ["/api/questions"],
+    queryFn: async () => {
+      try {
+        const res = await apiRequest("GET", "/api/questions");
+        return (await res.json()) as Question[];
+      } catch (error) {
+        // When the API isn't available (e.g. on GitHub Pages), return the
+        // built‑in default questions instead of throwing. We avoid rethrowing
+        // here because react-query will treat it as an error state and not set
+        // our fallback data.
+        return defaultQuestions;
+      }
+    },
   });
 
   const saveGameSession = useMutation({
