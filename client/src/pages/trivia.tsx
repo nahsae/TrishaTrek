@@ -91,6 +91,16 @@ export default function Trivia() {
   const handleNextQuestion = () => {
     if (!currentQuestion) return;
 
+    // Debug logging to track answer comparison
+    console.log('Answer comparison:', {
+      selectedAnswer,
+      correctAnswer: currentQuestion.correctAnswer,
+      selectedType: typeof selectedAnswer,
+      correctType: typeof currentQuestion.correctAnswer,
+      isEqual: selectedAnswer === currentQuestion.correctAnswer,
+      question: currentQuestion.text.substring(0, 50) + "..."
+    });
+
     const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
     const pointsEarned = isCorrect ? 100 : 0;
 
