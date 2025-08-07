@@ -69,7 +69,7 @@ export default function Trivia() {
   }, [gameStarted, gameState.isComplete, gameState.timeRemaining]);
 
   const currentQuestion = questions[gameState.currentQuestion];
-  const totalQuestions = Math.min(questions.length, 10);
+  const totalQuestions = questions.length;
   const progress = ((gameState.currentQuestion) / totalQuestions) * 100;
 
   const startGame = () => {
@@ -91,15 +91,7 @@ export default function Trivia() {
   const handleNextQuestion = () => {
     if (!currentQuestion) return;
 
-    // Debug logging to track answer comparison
-    console.log('Answer comparison:', {
-      selectedAnswer,
-      correctAnswer: currentQuestion.correctAnswer,
-      selectedType: typeof selectedAnswer,
-      correctType: typeof currentQuestion.correctAnswer,
-      isEqual: selectedAnswer === currentQuestion.correctAnswer,
-      question: currentQuestion.text.substring(0, 50) + "..."
-    });
+
 
     const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
     const pointsEarned = isCorrect ? 100 : 0;
@@ -361,11 +353,7 @@ export default function Trivia() {
                       ))}
                     </div>
 
-                    <div className="flex justify-between items-center">
-                      <Button variant="ghost" className="text-gray-500 hover:text-gray-700">
-                        <ArrowLeft className="w-4 h-4 mr-2" />
-                        Previous
-                      </Button>
+                    <div className="flex justify-end items-center">
                       <div className="flex space-x-4">
                         <Button
                           variant="outline"
@@ -380,7 +368,7 @@ export default function Trivia() {
                           disabled={!selectedAnswer}
                           className="bg-birthday-teal hover:bg-birthday-teal/80 text-white"
                         >
-                          Next Question
+                          {gameState.currentQuestion + 1 >= totalQuestions ? "Finish" : "Next Question"}
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </Button>
                       </div>
