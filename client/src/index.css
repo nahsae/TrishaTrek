@@ -59,6 +59,14 @@
   --birthday-mint: hsl(142 55% 78%);
   --birthday-coral: hsl(14 100% 75%);
   --birthday-lavender: hsl(260 60% 75%);
+  
+  /* Desi Color Palette */
+  --desi-saffron: hsl(38 100% 55%);
+  --desi-orange: hsl(28 100% 52%);
+  --desi-deep-indigo: hsl(234 89% 25%);
+  --desi-festive-teal: hsl(174 100% 37%);
+  --desi-warm-pink: hsl(339 100% 70%);
+  --desi-golden: hsl(43 100% 50%);
 }
 
 .dark {

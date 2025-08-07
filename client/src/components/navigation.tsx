@@ -9,6 +9,7 @@ export default function Navigation() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Play Trivia", href: "/trivia" },
+    { name: "Timeline", href: "/timeline" },
     { name: "Gallery", href: "/gallery" },
     { name: "Leaderboard", href: "/leaderboard" },
     { name: "Admin", href: "/admin" },
@@ -25,8 +26,8 @@ export default function Navigation() {
               T
             </div>
             <div>
-              <h1 className="text-white font-poppins font-bold text-xl">Trisha's Birthday Trivia</h1>
-              <p className="text-white/80 text-sm">Celebrating 25 Amazing Years! 🎂</p>
+              <h1 className="text-white font-poppins font-bold text-xl">Trisha's Birthday Celebration</h1>
+              <p className="text-white/80 text-sm">25 Years of Amazing Memories! 🎂</p>
             </div>
           </Link>
 

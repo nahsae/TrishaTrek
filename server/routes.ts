@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertQuestionSchema, insertGameSessionSchema } from "@shared/schema";
+import { insertQuestionSchema, insertGameSessionSchema, insertTimelineEventSchema } from "@shared/schema";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -101,6 +101,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({ totalQuestions, totalPlayers });
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch analytics" });
+    }
+  });
+
+  // Timeline routes
+  app.get("/api/timeline", async (req, res) => {
+    try {
+      const events = await storage.getAllTimelineEvents();
+      res.json(events);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch timeline events" });
+    }
+  });
+
+  app.post("/api/timeline", async (req, res) => {
+    try {
+      const eventData = insertTimelineEventSchema.parse(req.body);
+      const event = await storage.createTimelineEvent(eventData);
+      res.status(201).json(event);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Invalid timeline event data", errors: error.errors });
+      } else {
+        res.status(500).json({ message: "Failed to create timeline event" });
+      }
     }
   });
 

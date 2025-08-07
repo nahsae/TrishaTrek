@@ -52,8 +52,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Let's celebrate with a fun trivia about your amazing journey!<br />
-              From Union College to Goldman Sachs - test your knowledge! 
+              Celebrate with interactive trivia and explore her vibrant journey!<br />
+              From Mumbai to Wall Street - discover amazing memories! 
             </motion.p>
 
             <motion.div 
@@ -68,7 +68,16 @@ export default function Home() {
                   className="bg-white text-birthday-pink font-poppins font-bold px-8 py-4 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
                   <Play className="w-5 h-5 mr-3" />
-                  Start Trivia Game
+                  Play Trivia Game
+                </Button>
+              </Link>
+              <Link href="/timeline">
+                <Button 
+                  size="lg"
+                  className="bg-gradient-to-r from-orange-500 to-pink-500 text-white font-poppins font-bold px-8 py-4 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                >
+                  <Gift className="w-5 h-5 mr-3" />
+                  Explore Timeline
                 </Button>
               </Link>
               <Link href="/gallery">
@@ -76,7 +85,7 @@ export default function Home() {
                   size="lg"
                   className="bg-birthday-yellow text-gray-800 font-poppins font-bold px-8 py-4 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
-                  <Gift className="w-5 h-5 mr-3" />
+                  <Users className="w-5 h-5 mr-3" />
                   View Gallery
                 </Button>
               </Link>

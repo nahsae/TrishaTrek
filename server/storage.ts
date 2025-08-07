@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Question, type InsertQuestion, type GameSession, type InsertGameSession } from "@shared/schema";
+import { type User, type InsertUser, type Question, type InsertQuestion, type GameSession, type InsertGameSession, type TimelineEvent, type InsertTimelineEvent } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -15,18 +15,24 @@ export interface IStorage {
   createGameSession(session: InsertGameSession): Promise<GameSession>;
   getLeaderboard(limit?: number): Promise<GameSession[]>;
   getTotalPlayers(): Promise<number>;
+  
+  getAllTimelineEvents(): Promise<TimelineEvent[]>;
+  createTimelineEvent(event: InsertTimelineEvent): Promise<TimelineEvent>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<string, User>;
   private questions: Map<string, Question>;
   private gameSessions: Map<string, GameSession>;
+  private timelineEvents: Map<string, TimelineEvent>;
 
   constructor() {
     this.users = new Map();
     this.questions = new Map();
     this.gameSessions = new Map();
+    this.timelineEvents = new Map();
     this.initializeDefaultQuestions();
+    this.initializeTimelineEvents();
   }
 
   private initializeDefaultQuestions() {
@@ -366,6 +372,169 @@ export class MemStorage implements IStorage {
 
   async getTotalPlayers(): Promise<number> {
     return this.gameSessions.size;
+  }
+
+  async getAllTimelineEvents(): Promise<TimelineEvent[]> {
+    return Array.from(this.timelineEvents.values()).sort((a, b) => a.sortOrder - b.sortOrder);
+  }
+
+  async createTimelineEvent(event: InsertTimelineEvent): Promise<TimelineEvent> {
+    const id = randomUUID();
+    const newEvent: TimelineEvent = {
+      ...event,
+      sortOrder: event.sortOrder || 0,
+      id,
+      createdAt: new Date()
+    };
+    this.timelineEvents.set(id, newEvent);
+    return newEvent;
+  }
+
+  private initializeTimelineEvents() {
+    const timelineData: Omit<TimelineEvent, 'id' | 'createdAt'>[] = [
+      {
+        period: "2005–2013",
+        title: "Early School Days",
+        description: "Born and raised in Mumbai—chhoti Trisha's playful childhood filled with home and friend masti! 🏡👧",
+        sortOrder: 1
+      },
+      {
+        period: "July 2013",
+        title: "Freshman at DAIS",
+        description: "Fresh-faced freshman stepping into Dhirubhai Ambani International School corridors! 🎒",
+        sortOrder: 2
+      },
+      {
+        period: "September 2018",
+        title: "Head of Illustration, DAIMUN 2018",
+        description: "Art room ki Duracell Bunny for the DAIMUN Press Corps—uncontrollable spunk! 🐰🎨",
+        sortOrder: 3
+      },
+      {
+        period: "Tues & Thurs, 1:30–3 PM (2017–2019)",
+        title: "Bollywood Beats in Biology Lab",
+        description: "Blasted Bollywood music between experiments—lab mein full-on groove! 🎶🔬",
+        sortOrder: 4
+      },
+      {
+        period: "Summer 2018",
+        title: "Schbang Research Internship",
+        description: "Mumbai mein digital media tadka—market research wala swag! 💻📈",
+        sortOrder: 5
+      },
+      {
+        period: "Sept 2019",
+        title: "Freshman at Union College",
+        description: "Boarding the 'Dutch Apple'—college life kicks off in Schenectady, NY! ✈️🍎",
+        sortOrder: 6
+      },
+      {
+        period: "June–July 2020",
+        title: "Mentor, Next Genius Foundation",
+        description: "STEM ke young stars ki guru maa—mentoring with full desi heart! 🌟",
+        sortOrder: 7
+      },
+      {
+        period: "June–Sept 2020",
+        title: "Research Fellow, Myna Mahila",
+        description: "Mumbai public health initiatives par fieldwork—community champion vibes! 👩‍🔬",
+        sortOrder: 8
+      },
+      {
+        period: "Sept–Dec 2020",
+        title: "Intern, Paragon Partners Asia",
+        description: "Private equity deals ka sneak peek—investment due diligence swag! 💼",
+        sortOrder: 9
+      },
+      {
+        period: "2019–2022",
+        title: "Dean's List Honors",
+        description: "Three straight years on the Dean's List—academic rockstar! 📜🏆",
+        sortOrder: 10
+      },
+      {
+        period: "Aug 2021–Jun 2022",
+        title: "Residential Advisor, Schaffer Hall",
+        description: "Hall ki queen—freshman guidance with full hospitality! 👑",
+        sortOrder: 11
+      },
+      {
+        period: "June–Aug 2021",
+        title: "Summer Analyst, Goldman Sachs (Albany)",
+        description: "Capital city hustle—first Wall Street taste in Albany! 🏛️",
+        sortOrder: 12
+      },
+      {
+        period: "June–Aug 2022",
+        title: "Summer Analyst, Goldman Sachs (New York)",
+        description: "Big Apple internship—finance dreams in NYC! 🍎💼",
+        sortOrder: 13
+      },
+      {
+        period: "Sep–Nov 2022 & Mar–Jun 2023",
+        title: "Senior Intern, Admissions Office",
+        description: "Campus tour-guide superstar—helping future Dutch Apple leavers! 🎓",
+        sortOrder: 14
+      },
+      {
+        period: "June 2023",
+        title: "Graduation Day",
+        description: "Summa cum laude in Economics—top of the class, boss! 🎓✨",
+        sortOrder: 15
+      },
+      {
+        period: "June 2023",
+        title: "Quick Mumbai Recharge",
+        description: "Short trip home before the Wall Street debut—home sweet home! 🏠✈️",
+        sortOrder: 16
+      },
+      {
+        period: "July 2023–Present",
+        title: "Financial Analyst, Goldman Sachs NYC",
+        description: "Number-cruncher supreme in Private Wealth Management—Wall Street warrior! 💹🏙️",
+        sortOrder: 17
+      },
+      {
+        period: "Throughout College",
+        title: "President, Bhangra Club",
+        description: "Foot-tapping Punjabi beats—Bhangra club leader with full desi swag! 🕺💥",
+        sortOrder: 18
+      },
+      {
+        period: "Throughout College",
+        title: "President, Student Investment Fund",
+        description: "Portfolio mein bhi 'cha-ching'—campus finance boss! 📊💰",
+        sortOrder: 19
+      },
+      {
+        period: "Throughout College",
+        title: "Front Desk Career Assistant",
+        description: "Career Center ki friendly face—helping peeps land their dream gigs! 🤝📋",
+        sortOrder: 20
+      },
+      {
+        period: "Ongoing",
+        title: "Passions & Hobbies",
+        description: "Bollywood movies, music, photography & family time—full-on desi diva vibes! 🎥📸❤️",
+        sortOrder: 21
+      },
+      {
+        period: "Future",
+        title: "25th Birthday Dhamaka",
+        description: "Planning the biggest birthday bash ever—get ready for full-on dhamal! 🎂🎁🪔",
+        sortOrder: 22
+      }
+    ];
+
+    timelineData.forEach(event => {
+      const id = randomUUID();
+      this.timelineEvents.set(id, {
+        ...event,
+        sortOrder: event.sortOrder || 0,
+        id,
+        createdAt: new Date()
+      });
+    });
   }
 }
 
