@@ -405,124 +405,130 @@ export class MemStorage implements IStorage {
         sortOrder: 2
       },
       {
-        period: "September 2018",
-        title: "Head of Illustration, DAIMUN 2018",
-        description: "Art room ki Duracell Bunny for the DAIMUN Press Corps—uncontrollable spunk! 🐰🎨",
-        sortOrder: 3
-      },
-      {
         period: "Tues & Thurs, 1:30–3 PM (2017–2019)",
         title: "Bollywood Beats in Biology Lab",
         description: "Blasted Bollywood music between experiments—lab mein full-on groove! 🎶🔬",
-        sortOrder: 4
+        sortOrder: 3
       },
       {
         period: "Summer 2018",
         title: "Schbang Research Internship",
         description: "Mumbai mein digital media tadka—market research wala swag! 💻📈",
+        sortOrder: 4
+      },
+      {
+        period: "September 2018",
+        title: "Head of Illustration, DAIMUN 2018",
+        description: "Art room ki Duracell Bunny for the DAIMUN Press Corps—uncontrollable spunk! 🐰🎨",
         sortOrder: 5
       },
       {
-        period: "Sept 2019",
-        title: "Freshman at Union College",
-        description: "Boarding the 'Dutch Apple'—college life kicks off in Schenectady, NY! ✈️🍎",
+        period: "Summer 2019",
+        title: "Next Genius Scholarship Winner",
+        description: "Next Genius Foundation ka scholarship jeet ke full-on excited mohalla—Union College ki journey shuru hone se pehle achievement! 🏆🎉",
         sortOrder: 6
       },
       {
-        period: "June–July 2020",
-        title: "Mentor, Next Genius Foundation",
-        description: "STEM ke young stars ki guru maa—mentoring with full desi heart! 🌟",
+        period: "September 2019",
+        title: "Freshman at Union College",
+        description: "Boarding the 'Dutch Apple'—college life kicks off in Schenectady, NY! ✈️🍎",
         sortOrder: 7
-      },
-      {
-        period: "June–Sept 2020",
-        title: "Research Fellow, Myna Mahila",
-        description: "Mumbai public health initiatives par fieldwork—community champion vibes! 👩‍🔬",
-        sortOrder: 8
-      },
-      {
-        period: "Sept–Dec 2020",
-        title: "Intern, Paragon Partners Asia",
-        description: "Private equity deals ka sneak peek—investment due diligence swag! 💼",
-        sortOrder: 9
       },
       {
         period: "2019–2022",
         title: "Dean's List Honors",
         description: "Three straight years on the Dean's List—academic rockstar! 📜🏆",
+        sortOrder: 8
+      },
+      {
+        period: "June–July 2020",
+        title: "Mentor, Next Genius Foundation",
+        description: "STEM ke young stars ki guru maa—mentoring with full desi heart! 🌟",
+        sortOrder: 9
+      },
+      {
+        period: "June–September 2020",
+        title: "Research Fellow, Myna Mahila",
+        description: "Mumbai public health initiatives par fieldwork—community champion vibes! 👩‍🔬",
         sortOrder: 10
       },
       {
-        period: "Aug 2021–Jun 2022",
-        title: "Residential Advisor, Schaffer Hall",
-        description: "Hall ki queen—freshman guidance with full hospitality! 👑",
+        period: "September–December 2020",
+        title: "Intern, Paragon Partners Asia",
+        description: "Private equity deals ka sneak peek—investment due diligence swag! 💼",
         sortOrder: 11
       },
       {
-        period: "June–Aug 2021",
+        period: "June–August 2021",
         title: "Summer Analyst, Goldman Sachs (Albany)",
         description: "Capital city hustle—first Wall Street taste in Albany! 🏛️",
         sortOrder: 12
       },
       {
-        period: "June–Aug 2022",
-        title: "Summer Analyst, Goldman Sachs (New York)",
-        description: "Big Apple internship—finance dreams in NYC! 🍎💼",
+        period: "August 2021–June 2022",
+        title: "Residential Advisor, Schaffer Hall",
+        description: "Hall ki queen—freshman guidance with full hospitality! 👑",
         sortOrder: 13
       },
       {
-        period: "Sep–Nov 2022 & Mar–Jun 2023",
+        period: "June–August 2022",
+        title: "Summer Analyst, Goldman Sachs (New York)",
+        description: "Big Apple internship—finance dreams in NYC! 🍎💼",
+        sortOrder: 14
+      },
+      {
+        period: "September 2022 – June 2023",
+        title: "President, Bhangra Club",
+        description: "Foot-tapping Punjabi beats—Bhangra club leader with full desi swag! 🕺💥",
+        sortOrder: 15
+      },
+      {
+        period: "September 2022 – June 2023",
+        title: "President, Student Investment Fund",
+        description: "Portfolio mein bhi 'cha-ching'—campus finance boss! 📊💰",
+        sortOrder: 16
+      },
+      {
+        period: "September 2022 – June 2023",
+        title: "Front Desk Career Assistant",
+        description: "Career Center ki friendly face—helping peeps land their dream gigs! 🤝📋",
+        sortOrder: 17
+      },
+      {
+        period: "September–November 2022 & March–June 2023",
         title: "Senior Intern, Admissions Office",
         description: "Campus tour-guide superstar—helping future Dutch Apple leavers! 🎓",
-        sortOrder: 14
+        sortOrder: 18
       },
       {
         period: "June 2023",
         title: "Graduation Day",
         description: "Summa cum laude in Economics—top of the class, boss! 🎓✨",
-        sortOrder: 15
+        sortOrder: 19
       },
       {
         period: "June 2023",
         title: "Quick Mumbai Recharge",
         description: "Short trip home before the Wall Street debut—home sweet home! 🏠✈️",
-        sortOrder: 16
+        sortOrder: 20
       },
       {
         period: "July 2023–Present",
         title: "Financial Analyst, Goldman Sachs NYC",
         description: "Number-cruncher supreme in Private Wealth Management—Wall Street warrior! 💹🏙️",
-        sortOrder: 17
-      },
-      {
-        period: "Throughout College",
-        title: "President, Bhangra Club",
-        description: "Foot-tapping Punjabi beats—Bhangra club leader with full desi swag! 🕺💥",
-        sortOrder: 18
-      },
-      {
-        period: "Throughout College",
-        title: "President, Student Investment Fund",
-        description: "Portfolio mein bhi 'cha-ching'—campus finance boss! 📊💰",
-        sortOrder: 19
-      },
-      {
-        period: "Throughout College",
-        title: "Front Desk Career Assistant",
-        description: "Career Center ki friendly face—helping peeps land their dream gigs! 🤝📋",
-        sortOrder: 20
+        sortOrder: 21
       },
       {
         period: "Ongoing",
         title: "Passions & Hobbies",
         description: "Bollywood movies, music, photography & family time—full-on desi diva vibes! 🎥📸❤️",
-        sortOrder: 21
+        sortOrder: 22
       },
       {
         period: "Future",
         title: "25th Birthday Dhamaka",
         description: "Planning the biggest birthday bash ever—get ready for full-on dhamal! 🎂🎁🪔",
-        sortOrder: 22
+        sortOrder: 23
       }
     ];
 
