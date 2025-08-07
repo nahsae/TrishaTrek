@@ -111,9 +111,10 @@ export default function Trivia() {
         description: "+100 points",
       });
     } else {
+      const correctAnswerText = currentQuestion[`option${currentQuestion.correctAnswer}` as keyof typeof currentQuestion];
       toast({
         title: "Incorrect 😔",
-        description: `The correct answer was ${currentQuestion.correctAnswer}`,
+        description: `The correct answer was ${correctAnswerText}`,
         variant: "destructive",
       });
     }
@@ -393,7 +394,7 @@ export default function Trivia() {
                     <p className="text-gray-600">
                       {gameState.answers[gameState.answers.length - 1] === currentQuestion.correctAnswer 
                         ? "Great job! +100 points" 
-                        : `The correct answer was ${currentQuestion.correctAnswer}`
+                        : `The correct answer was ${currentQuestion[`option${currentQuestion.correctAnswer}` as keyof typeof currentQuestion]}`
                       }
                     </p>
                   </CardContent>
