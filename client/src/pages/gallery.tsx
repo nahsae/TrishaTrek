@@ -5,8 +5,8 @@ import { Badge } from "@/components/ui/badge";
 const galleryItems = [
   {
     title: "School Days",
-    description: "Dhirubhai Ambani High School memories",
-    period: "2013-2017",
+    description: "Dhirubhai Ambani International School memories",
+    period: "2013-2019",
     color: "birthday-lavender",
     image: "https://pixabay.com/get/g2769110c8177f38b571602b69c1e459edb42f737df8194bf407a77f479a1902364a9f39bc7027bf1423c9d8f64be18282a7b90516b35d3920bde7990c8e214e9_1280.jpg",
     alt: "Graduation ceremony celebration",
@@ -14,7 +14,7 @@ const galleryItems = [
   {
     title: "College Life",
     description: "Union College adventures and growth",
-    period: "2017-2021",
+    period: "2019-2023",
     color: "birthday-teal",
     image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     alt: "College campus with students",
@@ -22,7 +22,7 @@ const galleryItems = [
   {
     title: "Career Success",
     description: "Goldman Sachs professional journey",
-    period: "2021-Present",
+    period: "2023-Present",
     color: "birthday-pink",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     alt: "Modern office building and business district",
