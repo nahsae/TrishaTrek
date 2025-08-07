@@ -33,103 +33,203 @@ export class MemStorage implements IStorage {
     const defaultQuestions: Omit<Question, 'id' | 'createdAt'>[] = [
       {
         category: "Education",
-        text: "Which prestigious college did Trisha attend for her undergraduate studies?",
-        optionA: "Harvard University",
-        optionB: "Union College",
-        optionC: "Columbia University", 
-        optionD: "NYU Stern",
-        correctAnswer: "B",
-        difficulty: "easy"
-      },
-      {
-        category: "Education",
-        text: "What high school did Trisha attend before college?",
-        optionA: "Dhirubhai Ambani High School",
-        optionB: "Delhi Public School",
-        optionC: "St. Xavier's High School",
-        optionD: "Modern School",
+        text: "Which fancy international school did Trisha attend from 2013–2019?",
+        optionA: "Dhirubhai Ambani International School",
+        optionB: "Campion School",
+        optionC: "Oberoi International School",
+        optionD: "Bombay International Academy",
         correctAnswer: "A",
         difficulty: "easy"
       },
       {
-        category: "Career",
-        text: "Where does Trisha currently work?",
-        optionA: "Morgan Stanley",
-        optionB: "JPMorgan Chase",
-        optionC: "Goldman Sachs",
-        optionD: "Credit Suisse",
-        correctAnswer: "C",
-        difficulty: "easy"
-      },
-      {
-        category: "Personal",
-        text: "What milestone birthday is Trisha celebrating this year?",
-        optionA: "24th",
-        optionB: "25th",
-        optionC: "26th",
-        optionD: "23rd",
-        correctAnswer: "B",
-        difficulty: "easy"
-      },
-      {
-        category: "Career",
-        text: "Goldman Sachs is known for which primary business?",
-        optionA: "Technology Consulting",
-        optionB: "Investment Banking",
-        optionC: "Retail Banking",
-        optionD: "Insurance",
-        correctAnswer: "B",
-        difficulty: "medium"
-      },
-      {
         category: "Education",
-        text: "Union College is located in which state?",
-        optionA: "New York",
-        optionB: "Massachusetts",
-        optionC: "Connecticut",
-        optionD: "New Jersey",
-        correctAnswer: "A",
+        text: "What degree did Trisha earn from Union College in 2023?",
+        optionA: "Political Science",
+        optionB: "Economics",
+        optionC: "Psychology",
+        optionD: "Data Science",
+        correctAnswer: "D",
         difficulty: "medium"
       },
       {
         category: "Achievements",
-        text: "What type of degree program would someone typically pursue at Union College?",
-        optionA: "Associate Degree",
-        optionB: "Bachelor's Degree",
-        optionC: "Certificate Program",
-        optionD: "Trade School",
+        text: "Which Latin honor did Trisha graduate with?",
+        optionA: "cum laude",
+        optionB: "summa cum laude",
+        optionC: "magna cum laude",
+        optionD: "ultra cum laude",
+        correctAnswer: "C",
+        difficulty: "medium"
+      },
+      {
+        category: "Education",
+        text: "Which cool role did Trisha hold on Union's campus?",
+        optionA: "Residential Advisor",
+        optionB: "Campus DJ",
+        optionC: "Cafeteria Critic",
+        optionD: "Mascot Trainer",
+        correctAnswer: "A",
+        difficulty: "medium"
+      },
+      {
+        category: "Career",
+        text: "Which research internship did Trisha do in Mumbai, Summer 2018?",
+        optionA: "Schbang Research",
+        optionB: "McKinsey & Company",
+        optionC: "Bain & Company",
+        optionD: "NEXTGEN Labs",
+        correctAnswer: "A",
+        difficulty: "hard"
+      },
+      {
+        category: "Personal",
+        text: "Which mentoring program did Trisha support in June–July 2020?",
+        optionA: "Teach for India",
+        optionB: "Next Genius Foundation",
+        optionC: "Junior Achievement",
+        optionD: "STEM Sisters",
+        correctAnswer: "B",
+        difficulty: "hard"
+      },
+      {
+        category: "Career",
+        text: "Which private equity firm did Trisha intern with in late 2020?",
+        optionA: "Carlyle Group",
+        optionB: "Paragon Partners Asia",
+        optionC: "Blackstone Asia",
+        optionD: "TPG Capital",
+        correctAnswer: "B",
+        difficulty: "hard"
+      },
+      {
+        category: "Career",
+        text: "When did Trisha start her full-time role at Goldman Sachs?",
+        optionA: "January 2023",
+        optionB: "July 2023",
+        optionC: "September 2022",
+        optionD: "June 2024",
+        correctAnswer: "B",
+        difficulty: "medium"
+      },
+      {
+        category: "Career",
+        text: "What is the address of Trisha's Goldman Sachs branch in the US?",
+        optionA: "200 Park Avenue",
+        optionB: "200 West Street",
+        optionC: "1 World Trade Center",
+        optionD: "250 Vesey Street",
+        correctAnswer: "B",
+        difficulty: "hard"
+      },
+      {
+        category: "Achievements",
+        text: "On which honor roll did Trisha remain for three straight years at Union?",
+        optionA: "President's List",
+        optionB: "Dean's List",
+        optionC: "Chancellor's Roll",
+        optionD: "Scholar's League",
+        correctAnswer: "B",
+        difficulty: "medium"
+      },
+      {
+        category: "Career",
+        text: "What is Trisha's current job title at Goldman Sachs?",
+        optionA: "Investment Banker",
+        optionB: "Portfolio Manager",
+        optionC: "Financial Analyst",
+        optionD: "Equity Research Associate",
+        correctAnswer: "C",
+        difficulty: "medium"
+      },
+      {
+        category: "Education",
+        text: "How many years did Trisha study at Union College?",
+        optionA: "3",
+        optionB: "4",
+        optionC: "5",
+        optionD: "2",
         correctAnswer: "B",
         difficulty: "easy"
       },
       {
         category: "Fun Facts",
-        text: "Which decade was Trisha born in?",
-        optionA: "1990s",
-        optionB: "2000s",
-        optionC: "1980s",
-        optionD: "2010s",
-        correctAnswer: "A",
-        difficulty: "easy"
-      },
-      {
-        category: "Career",
-        text: "What sector does Goldman Sachs primarily operate in?",
-        optionA: "Healthcare",
-        optionB: "Financial Services",
-        optionC: "Technology",
-        optionD: "Manufacturing",
-        correctAnswer: "B",
-        difficulty: "easy"
+        text: "What's Trisha's real Instagram handle?",
+        optionA: "@trishaagarwal",
+        optionB: "@trishaaagarwal",
+        optionC: "@trishaagrawal8",
+        optionD: "@trishwishy",
+        correctAnswer: "D",
+        difficulty: "hard"
       },
       {
         category: "Personal",
-        text: "How many years has it been since Trisha graduated from high school (assuming 2017 graduation)?",
-        optionA: "6 years",
-        optionB: "7 years",
-        optionC: "8 years",
-        optionD: "5 years",
-        correctAnswer: "B",
+        text: "What creative title does she proudly wear in her bio?",
+        optionA: "Dream Weaver",
+        optionB: "Vision Crafters",
+        optionC: "Dreams Architect",
+        optionD: "Idea Alchemist",
+        correctAnswer: "C",
+        difficulty: "hard"
+      },
+      {
+        category: "Personal",
+        text: "Which cheeky line shows her generous nature?",
+        optionA: "Always Giving 😉",
+        optionB: "Pretty Generous",
+        optionC: "Still generous.",
+        optionD: "Generosity Goals",
+        correctAnswer: "C",
+        difficulty: "hard"
+      },
+      {
+        category: "Personal",
+        text: "Which loyal motto is she rocking?",
+        optionA: "Forever by your side…",
+        optionB: "I follow your lead…",
+        optionC: "Where you lead, I will follow…",
+        optionD: "Together, always…",
+        correctAnswer: "C",
+        difficulty: "hard"
+      },
+      {
+        category: "Fun Facts",
+        text: "What's her time-management mantra?",
+        optionA: "Better Early Than Late…",
+        optionB: "Always On Time!",
+        optionC: "On My Own Clock…",
+        optionD: "Late but Always Great…",
+        correctAnswer: "A",
         difficulty: "medium"
+      },
+      {
+        category: "Achievements",
+        text: "What major role did Trisha play in the DAIMUN Press Corps?",
+        optionA: "Head of Logistics",
+        optionB: "Head of Illustration",
+        optionC: "Chief Delegate",
+        optionD: "Press Secretary",
+        correctAnswer: "B",
+        difficulty: "hard"
+      },
+      {
+        category: "Personal",
+        text: "Before starting work after graduation, which city did Trisha return to?",
+        optionA: "Mumbai, India",
+        optionB: "Delhi, India",
+        optionC: "London, UK",
+        optionD: "Dubai, UAE",
+        correctAnswer: "A",
+        difficulty: "medium"
+      },
+      {
+        category: "Career",
+        text: "On which Mumbai public health initiative did Trisha conduct research in Summer 2020?",
+        optionA: "Swachh Bharat Mission",
+        optionB: "Mumbai Health Trust",
+        optionC: "Myna Mahila",
+        optionD: "HealthBridge India",
+        correctAnswer: "C",
+        difficulty: "hard"
       }
     ];
 
@@ -138,6 +238,7 @@ export class MemStorage implements IStorage {
       this.questions.set(id, {
         ...q,
         id,
+        difficulty: q.difficulty || "medium",
         createdAt: new Date()
       });
     });
@@ -173,6 +274,7 @@ export class MemStorage implements IStorage {
     const newQuestion: Question = {
       ...question,
       id,
+      difficulty: question.difficulty || "medium",
       createdAt: new Date()
     };
     this.questions.set(id, newQuestion);
@@ -195,7 +297,10 @@ export class MemStorage implements IStorage {
   async createGameSession(session: InsertGameSession): Promise<GameSession> {
     const id = randomUUID();
     const newSession: GameSession = {
-      ...session,
+      playerName: session.playerName,
+      score: session.score || 0,
+      correctAnswers: session.correctAnswers || 0,
+      totalQuestions: session.totalQuestions || 0,
       id,
       completedAt: new Date()
     };

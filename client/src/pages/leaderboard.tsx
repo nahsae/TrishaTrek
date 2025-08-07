@@ -207,7 +207,7 @@ export default function Leaderboard() {
                         <div>
                           <h4 className="font-semibold text-gray-800">{player.playerName}</h4>
                           <p className="text-gray-500 text-sm">
-                            Completed {formatTimeAgo(player.completedAt)}
+                            Completed {player.completedAt ? formatTimeAgo(player.completedAt) : 'Unknown'}
                           </p>
                         </div>
                       </div>

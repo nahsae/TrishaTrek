@@ -57,7 +57,8 @@ export default function Trivia() {
     const timer = setInterval(() => {
       setGameState(prev => {
         if (prev.timeRemaining <= 1) {
-          handleNextQuestion();
+          // Use setTimeout to avoid state update during render
+          setTimeout(() => handleNextQuestion(), 0);
           return prev;
         }
         return { ...prev, timeRemaining: prev.timeRemaining - 1 };
