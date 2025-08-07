@@ -1,0 +1,119 @@
+```json
+[
+  {
+    "period": "2005–2013",
+    "title": "Early School Days",
+    "description": "Born and raised in Mumbai—chhoti Trisha’s playful childhood filled with home and friend masti! 🏡👧"
+  },
+  {
+    "period": "July 2013",
+    "title": "Freshman at DAIS",
+    "description": "Fresh-faced freshman stepping into Dhirubhai Ambani International School corridors! 🎒"
+  },
+  {
+    "period": "Tues & Thurs, 1:30–3 PM (2017–2019)",
+    "title": "Bollywood Beats in Biology Lab",
+    "description": "Blasted Bollywood music between experiments—lab mein full-on groove! 🎶🔬"
+  },
+  {
+    "period": "Summer 2018",
+    "title": "Schbang Research Internship",
+    "description": "Mumbai mein digital media tadka—market research wala swag! 💻📈"
+  },
+  {
+    "period": "September 2018",
+    "title": "Head of Illustration, DAIMUN 2018",
+    "description": "Art room ki Duracell Bunny for the DAIMUN Press Corps—uncontrollable spunk! 🐰🎨"
+  },
+  {
+    "period": "Summer 2019",
+    "title": "Next Genius Scholarship Winner",
+    "description": "Next Genius Foundation ka scholarship jeet ke full-on excited mohalla—Union College ki journey shuru hone se pehle achievement! 🏆🎉"
+  },
+  {
+    "period": "September 2019",
+    "title": "Freshman at Union College",
+    "description": "Boarding the ‘Dutch Apple’—college life kicks off in Schenectady, NY! ✈️🍎"
+  },
+  {
+    "period": "2019–2022",
+    "title": "Dean’s List Honors",
+    "description": "Three straight years on the Dean’s List—academic rockstar! 📜🏆"
+  },
+  {
+    "period": "June–July 2020",
+    "title": "Mentor, Next Genius Foundation",
+    "description": "STEM ke young stars ki guru maa—mentoring with full desi heart! 🌟"
+  },
+  {
+    "period": "June–September 2020",
+    "title": "Research Fellow, Myna Mahila",
+    "description": "Mumbai public health initiatives par fieldwork—community champion vibes! 👩‍🔬"
+  },
+  {
+    "period": "September–December 2020",
+    "title": "Intern, Paragon Partners Asia",
+    "description": "Private equity deals ka sneak peek—investment due diligence swag! 💼"
+  },
+  {
+    "period": "June–August 2021",
+    "title": "Summer Analyst, Goldman Sachs (Albany)",
+    "description": "Capital city hustle—first Wall Street taste in Albany! 🏛️"
+  },
+  {
+    "period": "August 2021–June 2022",
+    "title": "Residential Advisor, Schaffer Hall",
+    "description": "Hall ki queen—freshman guidance with full hospitality! 👑"
+  },
+  {
+    "period": "June–August 2022",
+    "title": "Summer Analyst, Goldman Sachs (New York)",
+    "description": "Big Apple internship—finance dreams in NYC! 🍎💼"
+  },
+  {
+    "period": "September 2022 – June 2023",
+    "title": "President, Bhangra Club",
+    "description": "Foot-tapping Punjabi beats—Bhangra club leader with full desi swag! 🕺💥"
+  },
+  {
+    "period": "September 2022 – June 2023",
+    "title": "President, Student Investment Fund",
+    "description": "Portfolio mein bhi ‘cha-ching’—campus finance boss! 📊💰"
+  },
+  {
+    "period": "September 2022 – June 2023",
+    "title": "Front Desk Career Assistant",
+    "description": "Career Center ki friendly face—helping peeps land their dream gigs! 🤝📋"
+  },
+  {
+    "period": "September–November 2022 & March–June 2023",
+    "title": "Senior Intern, Admissions Office",
+    "description": "Campus tour-guide superstar—helping future Dutch Apple leavers! 🎓"
+  },
+  {
+    "period": "June 2023",
+    "title": "Graduation Day",
+    "description": "Summa cum laude in Economics—top of the class, boss! 🎓✨"
+  },
+  {
+    "period": "June 2023",
+    "title": "Quick Mumbai Recharge",
+    "description": "Short trip home before the Wall Street debut—home sweet home! 🏠✈️"
+  },
+  {
+    "period": "July 2023–Present",
+    "title": "Financial Analyst, Goldman Sachs NYC",
+    "description": "Number-cruncher supreme in Private Wealth Management—Wall Street warrior! 💹🏙️"
+  },
+  {
+    "period": "Ongoing",
+    "title": "Passions & Hobbies",
+    "description": "Bollywood movies, music, photography & family time—full-on desi diva vibes! 🎥📸❤️"
+  },
+  {
+    "period": "Future",
+    "title": "25th Birthday Dhamaka",
+    "description": "Planning the biggest birthday bash ever—get ready for full-on dhamal! 🎂🎁🪔"
+  }
+]
+```

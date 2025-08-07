@@ -1,0 +1,72 @@
+Here’s a ready-to-go brief you can hand off to your coding agent:
+
+---
+
+**Prompt for Coding Agent:**
+
+> **Project:** Trisha’s 25th–Birthday Celebration App
+>
+> **Objective:** Build a vibrant, mobile-first React application that lets family and friends scroll through an interactive, emoji-rich timeline of Trisha’s life—from her Mumbai school days to her Wall Street career.
+>
+> **Data Source:** Use the provided JSON array (see below) as the single source of truth for all timeline entries.
+>
+> **Key Requirements:**
+>
+> 1. **Timeline Component**
+>
+>    * Vertical, scrollable “card” layout.
+>    * Each card shows:
+>
+>      * `period` (e.g. “July 2013”)
+>      * `title` (e.g. “Freshman at DAIS”)
+>      * `description` (emoji-laced text).
+>    * Cards should animate into view (e.g. fade/slide on scroll).
+> 2. **Styling & Theming**
+>
+>    * Use Tailwind CSS for styling.
+>    * A playful “desi” color palette (warm saffron oranges, deep indigo, festive teal).
+>    * Soft rounded corners (2xl), subtle shadows, and generous padding.
+> 3. **Interactivity**
+>
+>    * Hover or tap a card to flip/reveal extra detail (optional Easter egg).
+>    * A fixed “🎂 Celebrate Trisha!” button that opens a modal to send birthday wishes or GIFs.
+> 4. **Accessibility & Responsiveness**
+>
+>    * Fully responsive across mobile and desktop.
+>    * Keyboard-navigable and screen-reader friendly.
+> 5. **Tech Stack**
+>
+>    * React (TypeScript optional)
+>    * Tailwind CSS
+>    * Framer Motion for animations
+>    * No additional UI libraries required, but you may use lucide-react for icons.
+>
+> **Deliverables:**
+>
+> * A single-page app with the interactive timeline.
+> * Clean, well-commented code and a README with setup instructions.
+>
+> **Timeline JSON:**
+>
+> ```json
+> [
+>   {
+>     "period": "2005–2013",
+>     "title": "Early School Days",
+>     "description": "Born and raised in Mumbai—chhoti Trisha’s playful childhood filled with home and friend masti! 🏡👧"
+>   },
+>   {
+>     "period": "July 2013",
+>     "title": "Freshman at DAIS",
+>     "description": "Fresh-faced freshman stepping into Dhirubhai Ambani International School corridors! 🎒"
+>   },
+>   …
+>   {
+>     "period": "Future",
+>     "title": "25th Birthday Dhamaka",
+>     "description": "Planning the biggest birthday bash ever—get ready for full-on dhamal! 🎂🎁🪔"
+>   }
+> ]
+> ```
+>
+> Feel free to propose any creative flourishes—this should feel like a festive, desi-style celebration in code!
