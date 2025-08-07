@@ -17,6 +17,12 @@ interface GameState {
   answers: string[];
   timeRemaining: number;
   isComplete: boolean;
+  lastResult?: {
+    isCorrect: boolean;
+    selectedAnswer: string;
+    correctAnswer: string;
+    correctAnswerText: string;
+  };
 }
 
 // Fun desi-style wrong answer roasts
@@ -39,6 +45,7 @@ export default function Trivia() {
     answers: [],
     timeRemaining: 45,
     isComplete: false,
+    lastResult: undefined,
   });
   const [selectedAnswer, setSelectedAnswer] = useState<string>("");
   const [showResult, setShowResult] = useState(false);
@@ -102,10 +109,16 @@ export default function Trivia() {
   const handleNextQuestion = () => {
     if (!currentQuestion) return;
 
-
-
     const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
     const pointsEarned = isCorrect ? 100 : 0;
+
+    // Store result info before updating state
+    const resultInfo = {
+      isCorrect,
+      selectedAnswer,
+      correctAnswer: currentQuestion.correctAnswer,
+      correctAnswerText: currentQuestion[`option${currentQuestion.correctAnswer}` as keyof typeof currentQuestion]
+    };
 
     setGameState(prev => ({
       ...prev,
@@ -114,6 +127,7 @@ export default function Trivia() {
       answers: [...prev.answers, selectedAnswer],
       currentQuestion: prev.currentQuestion + 1,
       timeRemaining: 45,
+      lastResult: resultInfo, // Store result for display
     }));
 
     if (isCorrect) {
@@ -122,11 +136,10 @@ export default function Trivia() {
         description: "+100 points milte hai!",
       });
     } else {
-      const correctAnswerText = currentQuestion[`option${currentQuestion.correctAnswer}` as keyof typeof currentQuestion];
       const randomRoast = wrongAnswerRoasts[Math.floor(Math.random() * wrongAnswerRoasts.length)];
       toast({
         title: randomRoast,
-        description: `Sahi jawab tha: ${correctAnswerText}`,
+        description: `Sahi jawab tha: ${resultInfo.correctAnswerText}`,
         variant: "destructive",
       });
     }
@@ -398,15 +411,15 @@ export default function Trivia() {
                 <Card className="shadow-2xl">
                   <CardContent className="p-12 text-center">
                     <div className="text-6xl mb-4">
-                      {gameState.answers[gameState.answers.length - 1] === currentQuestion.correctAnswer ? "🎉" : "😔"}
+                      {gameState.lastResult?.isCorrect ? "🎉" : "😔"}
                     </div>
                     <h3 className="text-2xl font-bold mb-4">
-                      {gameState.answers[gameState.answers.length - 1] === currentQuestion.correctAnswer ? "Shabash! 🎉" : "Oho! 😅"}
+                      {gameState.lastResult?.isCorrect ? "Shabash! 🎉" : "Oho! 😅"}
                     </h3>
                     <p className="text-gray-600">
-                      {gameState.answers[gameState.answers.length - 1] === currentQuestion.correctAnswer 
+                      {gameState.lastResult?.isCorrect 
                         ? "Waah! Bilkul sahi! +100 points 🎉" 
-                        : `Sahi jawab tha: ${currentQuestion[`option${currentQuestion.correctAnswer}` as keyof typeof currentQuestion]}`
+                        : `Sahi jawab tha: ${gameState.lastResult?.correctAnswerText}`
                       }
                     </p>
                   </CardContent>
