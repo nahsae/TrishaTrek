@@ -19,6 +19,17 @@ interface GameState {
   isComplete: boolean;
 }
 
+// Fun desi-style wrong answer roasts
+const wrongAnswerRoasts = [
+  "Arre yaar, galti ho gayi—par tension nahi, try again! 😜",
+  "Bhai, thoda dhoka ho gaya—dusri baar phir se dekh! 😂", 
+  "Oops! Thoda focus dhyaan se, ek aur chance! 😉",
+  "Arey chutki bajao, ye answer toh goli se bhi tez chala! 🤣",
+  "Galat jawab, par fikar not—inspo milega next time! 😁",
+  "Haww! Ye toh complete miss ho gaya—next wale mein dhamaal karna! 🙈",
+  "Arrey boss, thoda sa off-track ho gaye—wapas aa jaao! 🎯"
+];
+
 export default function Trivia() {
   const { toast } = useToast();
   const [gameState, setGameState] = useState<GameState>({
@@ -107,14 +118,15 @@ export default function Trivia() {
 
     if (isCorrect) {
       toast({
-        title: "Correct! 🎉",
-        description: "+100 points",
+        title: "Waah! Bilkul sahi! 🎉",
+        description: "+100 points milte hai!",
       });
     } else {
       const correctAnswerText = currentQuestion[`option${currentQuestion.correctAnswer}` as keyof typeof currentQuestion];
+      const randomRoast = wrongAnswerRoasts[Math.floor(Math.random() * wrongAnswerRoasts.length)];
       toast({
-        title: "Incorrect 😔",
-        description: `The correct answer was ${correctAnswerText}`,
+        title: randomRoast,
+        description: `Sahi jawab tha: ${correctAnswerText}`,
         variant: "destructive",
       });
     }
@@ -389,12 +401,12 @@ export default function Trivia() {
                       {gameState.answers[gameState.answers.length - 1] === currentQuestion.correctAnswer ? "🎉" : "😔"}
                     </div>
                     <h3 className="text-2xl font-bold mb-4">
-                      {gameState.answers[gameState.answers.length - 1] === currentQuestion.correctAnswer ? "Correct!" : "Incorrect!"}
+                      {gameState.answers[gameState.answers.length - 1] === currentQuestion.correctAnswer ? "Shabash! 🎉" : "Oho! 😅"}
                     </h3>
                     <p className="text-gray-600">
                       {gameState.answers[gameState.answers.length - 1] === currentQuestion.correctAnswer 
-                        ? "Great job! +100 points" 
-                        : `The correct answer was ${currentQuestion[`option${currentQuestion.correctAnswer}` as keyof typeof currentQuestion]}`
+                        ? "Waah! Bilkul sahi! +100 points 🎉" 
+                        : `Sahi jawab tha: ${currentQuestion[`option${currentQuestion.correctAnswer}` as keyof typeof currentQuestion]}`
                       }
                     </p>
                   </CardContent>
