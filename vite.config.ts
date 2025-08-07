@@ -4,6 +4,10 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  // Set base path for GitHub Pages deployment so that assets are correctly resolved.
+  // Without this, Vite will reference assets from the root (e.g. `/assets/...`),
+  // which causes blank pages when the site is served from a subfolder like `/TrishaTrek/`.
+  base: "/TrishaTrek/",
   plugins: [
     react(),
     runtimeErrorOverlay(),
