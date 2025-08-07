@@ -1,4 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import defaultTimeline from "@/data/defaultTimeline";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Heart, Sparkles, Cake } from "lucide-react";
@@ -14,8 +16,20 @@ export default function Timeline() {
   const [birthdayWish, setBirthdayWish] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const { data: timelineEvents, isLoading } = useQuery<TimelineEvent[]>({
+  // Fetch the timeline events from the API when available. On static
+  // deployments (e.g. GitHub Pages) there is no backend, so this falls back
+  // to a static list defined in `defaultTimeline`.
+  const { data: timelineEvents = [], isLoading } = useQuery<TimelineEvent[]>({
     queryKey: ["/api/timeline"],
+    queryFn: async () => {
+      try {
+        const res = await apiRequest("GET", "/api/timeline");
+        return (await res.json()) as TimelineEvent[];
+      } catch (error) {
+        // Fall back to the pre-defined timeline when the API is unreachable
+        return defaultTimeline;
+      }
+    },
   });
 
   useEffect(() => {
